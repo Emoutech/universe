@@ -12,6 +12,7 @@ import { paths } from 'src/routes/paths';
 // components
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -85,7 +86,7 @@ export default function HomeAdvertisement() {
         }}
         transition={{ duration: 4, repeat: Infinity }}
         alt="rocket"
-        src="/assets/images/home/rocket.webp"
+        src={`${ASSETS_API}/assets/images/home/rocket.webp`}
         sx={{ maxWidth: 460 }}
       />
     </Stack>

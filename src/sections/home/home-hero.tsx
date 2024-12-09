@@ -9,7 +9,7 @@ import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from '@mui/material/Grid';
 // routes
 import { paths } from "src/routes/paths";
 // hooks
@@ -24,6 +24,7 @@ import Iconify from "src/components/iconify";
 import SvgColor from "src/components/svg-color";
 import { RouterLink } from "src/routes/components";
 import { MotionContainer, varFade } from "src/components/animate";
+import { ASSETS_API } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +34,7 @@ const StyledRoot = styled("div")(({ theme }) => ({
       theme.palette.background.default,
       theme.palette.mode === "light" ? 0.9 : 0.94
     ),
-    imgUrl: "/assets/background/overlay_3.jpg",
+    imgUrl: `${ASSETS_API}/assets/background/overlay_3.jpg`,
   }),
   width: "100%",
   height: "100vh",
@@ -293,7 +294,7 @@ export default function HomeHero() {
         <Stack spacing={2} direction="row" justifyContent="center">
           {["figma", "js", "ts", "nextjs"].map((platform) => (
             <m.div key={platform} variants={varFade().in}>
-              <SvgColor src={`/assets/icons/platforms/ic_${platform}.svg`} />
+              <SvgColor src={`${ASSETS_API}/assets/icons/platforms/ic_${platform}.svg`} />
             </m.div>
           ))}
         </Stack>
@@ -325,9 +326,7 @@ export default function HomeHero() {
           animate={{ y: ["0%", "100%"] }}
           transition={transition}
           alt={isLight ? "light_1" : "dark_1"}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_1.webp`
+          src={ASSETS_API + isLight ? `/assets/images/home/hero/light_1.webp`
               : `/assets/images/home/hero/dark_1.webp`
           }
           sx={{ position: "absolute", mt: -5 }}

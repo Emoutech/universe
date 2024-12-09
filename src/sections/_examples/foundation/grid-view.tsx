@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 // routes
 import { paths } from 'src/routes/paths';
 // components

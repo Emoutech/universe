@@ -3,7 +3,7 @@
 // @mui
 import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 // _mock
 import { _bookings, _bookingNew, _bookingsOverview, _bookingReview } from 'src/_mock';
 // assets

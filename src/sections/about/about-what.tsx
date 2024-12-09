@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
 // hooks
@@ -16,6 +16,7 @@ import { fPercent } from 'src/utils/format-number';
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -53,7 +54,7 @@ export default function AboutWhat() {
               <m.div variants={varFade().inUp}>
                 <Image
                   alt="our office 2"
-                  src="/assets/images/about/what_2.png"
+                  src={`${ASSETS_API}/assets/images/about/what_2.png`}
                   ratio="1/1"
                   sx={{ borderRadius: 3, boxShadow: shadow }}
                 />
@@ -64,7 +65,7 @@ export default function AboutWhat() {
               <m.div variants={varFade().inUp}>
                 <Image
                   alt="our office 1"
-                  src="/assets/images/about/what_1.png"
+                  src={`${ASSETS_API}/assets/images/about/what_1.png`}
                   ratio="3/4"
                   sx={{ borderRadius: 3, boxShadow: shadow }}
                 />

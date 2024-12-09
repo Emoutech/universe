@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'src/components/image';
 import { useSettingsContext } from 'src/components/settings';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +52,7 @@ export default function HomeDarkMode() {
     <m.div variants={varFade().inUp}>
       <Image
         alt="darkmode"
-        src="/assets/images/home/darkmode.webp"
+        src={`${ASSETS_API}/assets/images/home/darkmode.webp`}
         sx={{
           borderRadius: 2,
           my: { xs: 5, md: 10 },

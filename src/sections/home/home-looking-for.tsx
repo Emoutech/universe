@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 // hooks
 import { useResponsive } from 'src/hooks/use-responsive';
 // routes
@@ -13,6 +13,7 @@ import { paths } from 'src/routes/paths';
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -78,7 +79,9 @@ export default function HomeLookingFor() {
 
         <Grid xs={12} md={7}>
           <m.div variants={varFade().inUp}>
-            <Image disabledEffect alt="rocket" src="/assets/images/home/zone_landing.webp" />
+            <Image disabledEffect alt="rocket" 
+            src={`${ASSETS_API}/assets/images/home/zone_landing.webp`}
+            />
           </m.div>
         </Grid>
 

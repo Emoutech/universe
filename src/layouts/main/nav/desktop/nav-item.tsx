@@ -11,6 +11,7 @@ import Iconify from 'src/components/iconify';
 //
 import { NavItemDesktopProps, NavItemProps } from '../types';
 import { ListItem } from './styles';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -89,7 +90,7 @@ export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) 
           <Box
             component="img"
             alt="illustration_dashboard"
-            src="/assets/illustrations/illustration_dashboard.png"
+            src={`${ASSETS_API}/assets/illustrations/illustration_dashboard.png`}
           />
         </m.div>
       </CardActionArea>

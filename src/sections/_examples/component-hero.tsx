@@ -12,6 +12,7 @@ import { useResponsive } from 'src/hooks/use-responsive';
 import { bgGradient } from 'src/theme/css';
 // components
 import { MotionContainer, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +31,7 @@ const StyledBg = styled('div')(({ theme }) => ({
   transform: 'scaleX(-1)',
   ...bgGradient({
     color: alpha(theme.palette.background.default, 0.9),
-    imgUrl: '/assets/background/overlay_4.jpg',
+    imgUrl: `${ASSETS_API}/assets/background/overlay_4.jpg`,
   }),
 }));
 

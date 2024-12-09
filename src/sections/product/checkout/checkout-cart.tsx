@@ -2,7 +2,7 @@ import sum from 'lodash/sum';
 // @mui
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 // routes

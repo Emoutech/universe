@@ -1,7 +1,7 @@
 // @mui
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 // types
 import { IPostItem } from 'src/types/blog';
 // components

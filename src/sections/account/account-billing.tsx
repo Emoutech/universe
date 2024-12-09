@@ -1,5 +1,5 @@
 // @mui
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 // types
 import { IUserAccountBillingHistory } from 'src/types/user';
 import { IPaymentCard } from 'src/types/payment';

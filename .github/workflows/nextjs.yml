@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BASE_PATH: universe-apps
+  NEXT_PUBLIC_BASE_PATH: /universe-apps-web
 
 jobs:
   build:

@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from 'react';
 // @mui
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 // redux
 import { useDispatch } from 'src/redux/store';

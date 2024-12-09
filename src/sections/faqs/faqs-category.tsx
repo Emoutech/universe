@@ -16,38 +16,39 @@ import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import TextMaxLine from 'src/components/text-max-line';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
 const CATEGORIES = [
   {
     label: 'Managing your account',
-    icon: '/assets/icons/faqs/ic_account.svg',
+    icon: ASSETS_API + '/assets/icons/faqs/ic_account.svg',
     href: '#',
   },
   {
     label: 'Payment',
-    icon: '/assets/icons/faqs/ic_payment.svg',
+    icon: ASSETS_API + '/assets/icons/faqs/ic_payment.svg',
     href: '#',
   },
   {
     label: 'Delivery',
-    icon: '/assets/icons/faqs/ic_delivery.svg',
+    icon: ASSETS_API + '/assets/icons/faqs/ic_delivery.svg',
     href: '#',
   },
   {
     label: 'Problem with the Product',
-    icon: '/assets/icons/faqs/ic_package.svg',
+    icon: ASSETS_API + '/assets/icons/faqs/ic_package.svg',
     href: '#',
   },
   {
     label: 'Return & Refund',
-    icon: '/assets/icons/faqs/ic_refund.svg',
+    icon: ASSETS_API +'/assets/icons/faqs/ic_refund.svg',
     href: '#',
   },
   {
     label: 'Guarantees and assurances',
-    icon: '/assets/icons/faqs/ic_assurances.svg',
+    icon: ASSETS_API + '/assets/icons/faqs/ic_assurances.svg',
     href: '#',
   },
 ];

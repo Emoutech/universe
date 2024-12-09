@@ -4,7 +4,7 @@ import { useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 // hooks
 import { useResponsive } from 'src/hooks/use-responsive';
@@ -15,6 +15,7 @@ import { paths } from 'src/routes/paths';
 // components
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import { ASSETS_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -65,7 +66,7 @@ export default function HomeForDesigner() {
   const renderImg = (
     <Box
       component={m.img}
-      src="/assets/images/home/for_designer.webp"
+      src={`${ASSETS_API}/assets/images/home/for_designer.webp`}
       variants={varFade().in}
       sx={{
         height: 1,
@@ -90,12 +91,12 @@ export default function HomeForDesigner() {
         ...bgGradient({
           startColor: `${theme.palette.grey[900]} 25%`,
           endColor: alpha(theme.palette.grey[900], 0),
-          imgUrl: '/assets/images/home/for_designer.webp',
+          imgUrl: `${ASSETS_API}/assets/images/home/for_designer.webp`,
         }),
         ...(upMd && {
           ...bgGradient({
             color: alpha(theme.palette.background.default, 0.8),
-            imgUrl: '/assets/background/overlay_4.jpg',
+            imgUrl: `${ASSETS_API}/assets/background/overlay_4.jpg`,
           }),
         }),
       }}

@@ -1,7 +1,7 @@
 'use client';
 
 // @mui
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // _mock
