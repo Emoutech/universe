@@ -17,7 +17,7 @@ import { paths } from "src/routes/paths";
 import { useSearchParams } from "src/routes/hook";
 import { RouterLink } from "src/routes/components";
 // config
-import { PATH_AFTER_LOGIN } from "src/config-global";
+import { URL_LOGIN } from "src/config-global";
 // hooks
 import { useBoolean } from "src/hooks/use-boolean";
 // auth
@@ -72,7 +72,7 @@ export default function JwtLoginView() {
       try {
         await login?.(data.email, data.password);
 
-        window.location.href = returnTo || PATH_AFTER_LOGIN;
+        window.location.href = returnTo || URL_LOGIN;
       } catch (error) {
         console.error(error);
         reset();
@@ -89,11 +89,7 @@ export default function JwtLoginView() {
       <Stack direction="row" spacing={0.5}>
         <Typography variant="body2">New user?</Typography>
 
-        <Link
-          component={RouterLink}
-          href={paths.auth.jwt.register}
-          variant="subtitle2"
-        >
+        <Link component={RouterLink} href={"/"} variant="subtitle2">
           Create an account
         </Link>
       </Stack>

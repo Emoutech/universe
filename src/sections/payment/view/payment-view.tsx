@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
 // @mui
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid2";
+import Typography from "@mui/material/Typography";
 //
-import PaymentSummary from '../payment-summary';
-import PaymentMethods from '../payment-methods';
-import PaymentBillingAddress from '../payment-billing-address';
+import PaymentSummary from "../payment-summary";
+import PaymentMethods from "../payment-methods";
+import PaymentBillingAddress from "../payment-billing-address";
 
 // ----------------------------------------------------------------------
 
@@ -25,18 +25,22 @@ export default function PaymentView() {
         {`Let's finish powering you up!`}
       </Typography>
 
-      <Typography align="center" sx={{ color: 'text.secondary', mb: 5 }}>
+      <Typography align="center" sx={{ color: "text.secondary", mb: 5 }}>
         Professional plan is right for you.
       </Typography>
 
-      <Grid container rowSpacing={{ xs: 5, md: 0 }} columnSpacing={{ xs: 0, md: 5 }}>
-        <Grid xs={12} md={8}>
+      <Grid
+        container
+        rowSpacing={{ xs: 5, md: 0 }}
+        columnSpacing={{ xs: 0, md: 5 }}
+      >
+        <Grid size={{ xs: 12, md: 8 }}>
           <Box
             gap={5}
             display="grid"
             gridTemplateColumns={{
-              xs: 'repeat(1, 1fr)',
-              md: 'repeat(2, 1fr)',
+              xs: "repeat(1, 1fr)",
+              md: "repeat(2, 1fr)",
             }}
             sx={{
               p: { md: 5 },
@@ -52,7 +56,7 @@ export default function PaymentView() {
           </Box>
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <PaymentSummary />
         </Grid>
       </Grid>

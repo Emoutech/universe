@@ -1,20 +1,20 @@
 // @mui
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid2";
 // types
-import { IProductCheckoutState } from 'src/types/product';
+import { IProductCheckoutState } from "src/types/product";
 // _mock
-import { _addressBooks } from 'src/_mock';
+import { _addressBooks } from "src/_mock";
 // hooks
-import { useBoolean } from 'src/hooks/use-boolean';
+import { useBoolean } from "src/hooks/use-boolean";
 // types
-import { IAddressItem } from 'src/types/address';
+import { IAddressItem } from "src/types/address";
 // components
-import Iconify from 'src/components/iconify';
+import Iconify from "src/components/iconify";
 //
-import { AddressNewForm, AddressItem } from '../../address';
-import CheckoutSummary from './checkout-summary';
+import { AddressNewForm, AddressItem } from "../../address";
+import CheckoutSummary from "./checkout-summary";
 
 // ----------------------------------------------------------------------
 
@@ -24,13 +24,17 @@ type Props = {
   onCreateBilling: (address: IAddressItem) => void;
 };
 
-export default function CheckoutBillingAddress({ checkout, onBackStep, onCreateBilling }: Props) {
+export default function CheckoutBillingAddress({
+  checkout,
+  onBackStep,
+  onCreateBilling,
+}: Props) {
   const addressForm = useBoolean();
 
   return (
     <>
       <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           {_addressBooks.slice(0, 4).map((address) => (
             <AddressItem
               key={address.id}
@@ -42,7 +46,11 @@ export default function CheckoutBillingAddress({ checkout, onBackStep, onCreateB
                       Delete
                     </Button>
                   )}
-                  <Button variant="outlined" size="small" onClick={() => onCreateBilling(address)}>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    onClick={() => onCreateBilling(address)}
+                  >
                     Deliver to this Address
                   </Button>
                 </Stack>
@@ -77,7 +85,7 @@ export default function CheckoutBillingAddress({ checkout, onBackStep, onCreateB
           </Stack>
         </Grid>
 
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <CheckoutSummary
             total={checkout.total}
             subTotal={checkout.subTotal}

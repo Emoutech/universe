@@ -1,17 +1,17 @@
-import { m } from 'framer-motion';
-import { forwardRef } from 'react';
+import { m } from "framer-motion";
+import { forwardRef } from "react";
 // @mui
-import Box from '@mui/material/Box';
-import Link, { LinkProps } from '@mui/material/Link';
-import CardActionArea from '@mui/material/CardActionArea';
+import Box from "@mui/material/Box";
+import Link, { LinkProps } from "@mui/material/Link";
+import CardActionArea from "@mui/material/CardActionArea";
 // routes
-import { RouterLink } from 'src/routes/components';
+import { RouterLink } from "src/routes/components";
 // components
-import Iconify from 'src/components/iconify';
+import Iconify from "src/components/iconify";
 //
-import { NavItemDesktopProps, NavItemProps } from '../types';
-import { ListItem } from './styles';
-import { ASSETS_API } from 'src/config-global';
+import { NavItemDesktopProps, NavItemProps } from "../types";
+import { ListItem } from "./styles";
+import { BASE_PATH_APPS } from "src/config-global";
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,13 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
       >
         {title}
 
-        {!!children && <Iconify width={16} icon="eva:arrow-ios-downward-fill" sx={{ ml: 1 }} />}
+        {!!children && (
+          <Iconify
+            width={16}
+            icon="eva:arrow-ios-downward-fill"
+            sx={{ ml: 1 }}
+          />
+        )}
       </ListItem>
     );
 
@@ -64,7 +70,11 @@ interface NavItemDashboardProps extends LinkProps {
   item: NavItemProps;
 }
 
-export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) {
+export function NavItemDashboard({
+  item,
+  sx,
+  ...other
+}: NavItemDashboardProps) {
   return (
     <Link component={RouterLink} href={item.path} sx={{ width: 1 }} {...other}>
       <CardActionArea
@@ -73,8 +83,8 @@ export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) 
           px: 10,
           minHeight: 400,
           borderRadius: 1.5,
-          color: 'text.disabled',
-          bgcolor: 'background.neutral',
+          color: "text.disabled",
+          bgcolor: "background.neutral",
 
           ...sx,
         }}
@@ -90,7 +100,7 @@ export function NavItemDashboard({ item, sx, ...other }: NavItemDashboardProps) 
           <Box
             component="img"
             alt="illustration_dashboard"
-            src={`${ASSETS_API}/assets/illustrations/illustration_dashboard.png`}
+            src={`${BASE_PATH_APPS}/assets/illustrations/illustration_dashboard.png`}
           />
         </m.div>
       </CardActionArea>

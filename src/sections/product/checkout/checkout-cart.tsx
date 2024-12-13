@@ -1,21 +1,21 @@
-import sum from 'lodash/sum';
+import sum from "lodash/sum";
 // @mui
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import CardHeader from '@mui/material/CardHeader';
-import Typography from '@mui/material/Typography';
+import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid2";
+import CardHeader from "@mui/material/CardHeader";
+import Typography from "@mui/material/Typography";
 // routes
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 // types
-import { IProductCheckoutState } from 'src/types/product';
+import { IProductCheckoutState } from "src/types/product";
 // components
-import Iconify from 'src/components/iconify';
-import { RouterLink } from 'src/routes/components';
-import EmptyContent from 'src/components/empty-content';
+import Iconify from "src/components/iconify";
+import { RouterLink } from "src/routes/components";
+import EmptyContent from "src/components/empty-content";
 //
-import CheckoutSummary from './checkout-summary';
-import CheckoutCartProductList from './checkout-cart-product-list';
+import CheckoutSummary from "./checkout-summary";
+import CheckoutCartProductList from "./checkout-cart-product-list";
 
 // ----------------------------------------------------------------------
 
@@ -44,13 +44,13 @@ export default function CheckoutCart({
 
   return (
     <Grid container spacing={3}>
-      <Grid xs={12} md={8}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Card sx={{ mb: 3 }}>
           <CardHeader
             title={
               <Typography variant="h6">
                 Cart
-                <Typography component="span" sx={{ color: 'text.secondary' }}>
+                <Typography component="span" sx={{ color: "text.secondary" }}>
                   &nbsp;({totalItems} item)
                 </Typography>
               </Typography>
@@ -85,7 +85,7 @@ export default function CheckoutCart({
         </Button>
       </Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid size={{ xs: 12, md: 4 }}>
         <CheckoutSummary
           enableDiscount
           total={total}

@@ -1,12 +1,12 @@
 // sections
-import { HomeView } from "src/sections/home/view";
+import { OverviewAppView } from "src/sections/overview/app/view";
 
 // ----------------------------------------------------------------------
 
 export const metadata = {
-  title: "Flechei: Workspace",
+  title: "Dashboard: App",
 };
 
-export default function HomePage() {
-  return <HomeView />;
+export default function OverviewAppPage() {
+  return <OverviewAppView />;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 // i18n
 import "src/locales/i18n";
 
@@ -38,39 +40,41 @@ import SnackbarProvider from "src/components/snackbar/snackbar-provider";
 import { SettingsProvider, SettingsDrawer } from "src/components/settings";
 // auth
 import { AuthProvider, AuthConsumer } from "src/auth/context/jwt";
-import { ASSETS_API } from "src/config-global";
+import { BASE_PATH_APPS } from "src/config-global";
+import { AuthGuard } from "src/auth/guard";
+import DashboardLayout from "src/layouts/dashboard/layout";
 
-export const metadata = {
-  title: "Minimal UI Kit",
-  description:
-    "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style",
-  keywords: "react,material,kit,application,demo,admin,template",
-  themeColor: "#000000",
-  manifest: `${ASSETS_API}/manifest.json`,
-  icons: [
-    {
-      rel: "icon",
-      url: `${ASSETS_API}/favicon/favicon.ico`,
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "16x16",
-      url: `${ASSETS_API}/favicon/favicon-16x16.png`,
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "32x32",
-      url: `${ASSETS_API}/favicon/favicon-32x32.png`,
-    },
-    {
-      rel: "apple-touch-icon",
-      sizes: "180x180",
-      url: `${ASSETS_API}/favicon/apple-touch-icon.png`,
-    },
-  ],
-};
+// export const metadata = {
+//   title: "Minimal UI Kit",
+//   description:
+//     "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style",
+//   keywords: "react,material,kit,application,demo,admin,template",
+//   themeColor: "#000000",
+//   manifest: `${BASE_PATH_APPS}/manifest.json`,
+//   icons: [
+//     {
+//       rel: "icon",
+//       url: `${BASE_PATH_APPS}/favicon/favicon.ico`,
+//     },
+//     {
+//       rel: "icon",
+//       type: "image/png",
+//       sizes: "16x16",
+//       url: `${BASE_PATH_APPS}/favicon/favicon-16x16.png`,
+//     },
+//     {
+//       rel: "icon",
+//       type: "image/png",
+//       sizes: "32x32",
+//       url: `${BASE_PATH_APPS}/favicon/favicon-32x32.png`,
+//     },
+//     {
+//       rel: "apple-touch-icon",
+//       sizes: "180x180",
+//       url: `${BASE_PATH_APPS}/favicon/apple-touch-icon.png`,
+//     },
+//   ],
+// };
 
 type Props = {
   children: React.ReactNode;
@@ -98,7 +102,11 @@ export default function RootLayout({ children }: Props) {
                     <SnackbarProvider>
                       <SettingsDrawer />
                       <ProgressBar />
-                      <AuthConsumer>{children}</AuthConsumer>
+                      <AuthConsumer>
+                        <AuthGuard>
+                          <DashboardLayout>{children}</DashboardLayout>
+                        </AuthGuard>
+                      </AuthConsumer>
                     </SnackbarProvider>
                   </MotionLazy>
                 </ThemeProvider>

@@ -8,6 +8,7 @@ import { AuthContext } from "./auth-context";
 import { isValidToken, setSession } from "./utils";
 import { ActionMapType, AuthStateType, AuthUserType } from "../../types";
 import { everton } from "src/hooks/use-mocked-user";
+import Cookies from "js-cookie";
 
 // ----------------------------------------------------------------------
 
@@ -87,7 +88,7 @@ export function AuthProvider({ children }: Props) {
 
   const initialize = useCallback(async () => {
     try {
-      const accessToken = sessionStorage.getItem(STORAGE_KEY);
+      const accessToken = Cookies.get(STORAGE_KEY);
 
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
@@ -173,7 +174,7 @@ export function AuthProvider({ children }: Props) {
 
       const { accessToken, user } = response.data;
 
-      sessionStorage.setItem(STORAGE_KEY, accessToken);
+      Cookies.set(STORAGE_KEY, accessToken);
 
       dispatch({
         type: Types.REGISTER,
